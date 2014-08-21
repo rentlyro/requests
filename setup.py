@@ -3,7 +3,7 @@
 import os
 import sys
 
-import requests
+import http_requests
 
 try:
     from setuptools import setup
@@ -15,14 +15,14 @@ if sys.argv[-1] == 'publish':
     sys.exit()
 
 packages = [
-    'requests',
-    'requests.packages',
-    'requests.packages.chardet',
-    'requests.packages.urllib3',
-    'requests.packages.urllib3.packages',
-    'requests.packages.urllib3.contrib',
-    'requests.packages.urllib3.util',
-    'requests.packages.urllib3.packages.ssl_match_hostname',
+    'http_requests',
+    'http_requests.packages',
+    'http_requests.packages.chardet',
+    'http_requests.packages.urllib3',
+    'http_requests.packages.urllib3.packages',
+    'http_requests.packages.urllib3.contrib',
+    'http_requests.packages.urllib3.util',
+    'http_requests.packages.urllib3.packages.ssl_match_hostname',
 ]
 
 requires = ['certifi']
@@ -33,16 +33,16 @@ with open('HISTORY.rst') as f:
     history = f.read()
 
 setup(
-    name='requests',
-    version=requests.__version__,
+    name='http_requests',
+    version=http_requests.__version__,
     description='Python HTTP for Humans.',
     long_description=readme + '\n\n' + history,
     author='Kenneth Reitz',
     author_email='me@kennethreitz.com',
     url='http://python-requests.org',
     packages=packages,
-    package_data={'': ['LICENSE', 'NOTICE'], 'requests': ['*.pem']},
-    package_dir={'requests': 'requests'},
+    package_data={'': ['LICENSE', 'NOTICE'], 'http_requests': ['*.pem']},
+    package_dir={'http_requests': 'http_requests'},
     include_package_data=True,
     install_requires=requires,
     license='Apache 2.0',
